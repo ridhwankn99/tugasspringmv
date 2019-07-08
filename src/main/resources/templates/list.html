@@ -11,18 +11,17 @@
     <th>Name</th>
     <th>Type</th>
     <th>Action</th>
-  </tr>
+    </tr>
   <tr th:each="brand : ${listBrand}">  
   	<td th:text="${brand.id}"/>
   	<td th:text="${brand.name}"/>
   	<td th:text="${brand.type}"/>
+  	
   	<td>
-  		<button type="button">
-  			Edit
-  		</button>
-  		<button type="button">
-  			Delete
-  		</button>
+  		<a th:href="@{/brand/edit/} +${brand.id}" >Edit</a>
+   		<a th:href="${'/brand/delete/'+brand.id}">Delete</a>
+  			
+  		
  	</td>
   </tr>
 </table> 
